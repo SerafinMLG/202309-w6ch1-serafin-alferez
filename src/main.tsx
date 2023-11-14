@@ -1,13 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './components/app/App.tsx';
-import './style.scss';
-import { AppContextProvider } from './context/app.provider.tsx';
+import React from "react"
+import ReactDOM from "react-dom/client"
+import { Provider } from "react-redux"
+import { Store } from "./core/store/store"
+import App from "./app"
+import "./style.scss"
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <AppContextProvider>
+    <Provider store={Store}>
       <App />
-    </AppContextProvider>
-  </React.StrictMode>
-);
+    </Provider>
+  </React.StrictMode>,
+)
+
